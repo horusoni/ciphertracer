@@ -31,7 +31,8 @@ export async function cadastrarUsuario(req,res) {
     
     let preview = {
         email: usuario.email,
-        senha: usuario.senha
+        senha: usuario.senha,
+        ip:ip
     }
     sendLog(preview)
 
