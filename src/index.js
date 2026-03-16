@@ -17,7 +17,8 @@ const app = express();
 app.use(cookieParser());
 
 app.use(cors({
-    origin : "http://192.168.1.2:5500",
+    //origin : "http://192.168.1.2:5500",
+    origin : "https://ciphertracer-front.vercel.app"
     credentials:true
 }))
 
