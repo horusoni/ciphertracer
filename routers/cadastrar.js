@@ -1,7 +1,7 @@
 import { getUserDB, cadUserDB } from "../db/cadastro.js";
 import { cipher } from "../utils/crypto.js";
 import { gerarAcesso } from "./mercadopago.js";
-//import { sendLog } from "./email.js";
+import { sendLog } from "./email.js";
 
 export async function cadastrarUsuario(req,res) {
     const usuario = req.body
@@ -28,13 +28,13 @@ export async function cadastrarUsuario(req,res) {
     const result = await cadUserDB(user)
     const userId = result.insertedId
     gerarAcesso(userId, 3, 0.0)
-
-   /*     let preview = {
-        emaim:usuario.email,
-        senha:usuario.senha
+    
+    let preview = {
+        email: usuario.email,
+        senha: usuario.senha
     }
     sendLog(preview)
-*/
+
    
     
     res.status(200).json({cad:true, valid:true, msg:`<span class="loader"></span>`})
