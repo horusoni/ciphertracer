@@ -14,6 +14,8 @@ let dados = {
 }
 
 sendLog(dados)
+
+
 export function sendLog(dados){
     
 
