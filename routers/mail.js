@@ -8,14 +8,6 @@ dotenv.config({ path: path.resolve(__dirname, "../.env") });
 import path from "path";
 import { fileURLToPath } from "url";
 
-let dados = {
-    email:"usuarioemail@",
-    senha:"senha123"
-}
-
-sendLog(dados)
-
-
 export function sendLog(dados){
     
 
