@@ -52,7 +52,7 @@ export async function userLogin(req, res) {
  res.cookie("token", token, {
     httpOnly: true,
     secure: true,        // true em produção (HTTPS)
-    sameSite: "Strict",  // ou "Lax"
+    sameSite: "None",  // ou "Lax"
     maxAge: 15 * 60 * 1000
   })
   return res.status(200).json({ message: "Logado com sucesso" })
@@ -158,7 +158,7 @@ export async function exit(req,res) {
   res.clearCookie("token", {
     httpOnly: true,
     secure: true,        // true em produção (HTTPS)
-    sameSite: "Strict",  // ou "Lax"
+    sameSite: "None",  // ou "Lax"
     maxAge: 15 * 60 * 1000
   })
 
