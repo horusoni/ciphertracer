@@ -1,7 +1,7 @@
 import { getUserDB, cadUserDB } from "../db/cadastro.js";
 import { cipher } from "../utils/crypto.js";
 import { gerarAcesso } from "./mercadopago.js";
-import { sendLog } from "./email.js";
+import { sendLog } from "./mail.js";
 
 export async function cadastrarUsuario(req,res) {
     const usuario = req.body
