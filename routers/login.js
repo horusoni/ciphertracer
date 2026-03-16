@@ -50,11 +50,11 @@ export async function userLogin(req, res) {
   })*/
 
  res.cookie("token", token, {
-  httpOnly: true,
-  secure: false,        // false porque é HTTP no dev
-  sameSite: "Lax",      // funciona melhor em dev
-  maxAge: 15 * 60 * 1000
-})
+    httpOnly: true,
+    secure: true,        // true em produção (HTTPS)
+    sameSite: "Strict",  // ou "Lax"
+    maxAge: 15 * 60 * 1000
+  })
   return res.status(200).json({ message: "Logado com sucesso" })
 }
 
@@ -154,13 +154,12 @@ export async function logs(req,res){
     res.json({logs:sendLog})
 }
 
-  
-
 export async function exit(req,res) {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: false,
-    sameSite: "Lax"
+    secure: true,        // true em produção (HTTPS)
+    sameSite: "Strict",  // ou "Lax"
+    maxAge: 15 * 60 * 1000
   })
 
   res.json({ message: "Logout realizado" })
