@@ -53,9 +53,8 @@ export async function userLogin(req, res) {
     httpOnly: true,
     secure: true,
     sameSite: "None",
-    domain: ".vercel.app",
     path: "/",
-    maxAge: 15 * 60 * 1000
+    maxAge: 1000 * 60 * 60 // 1 hora
   })
   return res.status(200).json({ message: "Logado com sucesso" })
 }
@@ -158,11 +157,11 @@ export async function logs(req,res){
 
 export async function exit(req,res) {
   res.clearCookie("token", {
-     httpOnly: true,
-     secure: true,
-     sameSite: "None",
-     path: "/",
-     maxAge: 15 * 60 * 1000
+    httpOnly: true,
+    secure: true,
+    sameSite: "None",
+    path: "/",
+    maxAge: 1000 * 60 * 60 // 1 hora
   })
 
   res.json({ message: "Logout realizado" })
