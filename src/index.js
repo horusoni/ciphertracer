@@ -22,8 +22,6 @@ app.use(cors({
     credentials:true
 }))
 
-app.set("trust proxy", 1)
-
 app.use(express.json());
 
 app.get("/teste",(req,res)=>{ res.send({status:200})})
