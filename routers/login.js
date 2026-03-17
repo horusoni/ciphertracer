@@ -53,6 +53,7 @@ export async function userLogin(req, res) {
     httpOnly: true,
     secure: true,
     sameSite: "None",
+    domain: ".vercel.app",
     path: "/",
     maxAge: 15 * 60 * 1000
   })
