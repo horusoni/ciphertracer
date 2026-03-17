@@ -157,10 +157,11 @@ export async function logs(req,res){
 
 export async function exit(req,res) {
   res.clearCookie("token", {
-    httpOnly: true,
-    secure: true,        // true em produção (HTTPS)
-    sameSite: "None",  // ou "Lax"
-    maxAge: 15 * 60 * 1000
+     httpOnly: true,
+     secure: true,
+     sameSite: "None",
+     path: "/",
+     maxAge: 15 * 60 * 1000
   })
 
   res.json({ message: "Logout realizado" })
