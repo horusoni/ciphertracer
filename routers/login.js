@@ -161,7 +161,6 @@ export async function exit(req,res) {
     secure: true,
     sameSite: "None",
     path: "/",
-    maxAge: 1000 * 60 * 60 // 1 hora
   })
 
   res.json({ message: "Logout realizado" })
