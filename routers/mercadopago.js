@@ -27,7 +27,7 @@ export async function criarCobranca(req, res) {
 
         external_reference:userId,
 
-        notification_url:"https://www.ciphertracer.com.br/webhook",
+        notification_url:"https://api.ciphertracer.com.br/webhook",
 
         payer: {
             email: user.email,
