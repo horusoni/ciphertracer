@@ -4,7 +4,7 @@ import { paymentDB } from "../db/payment.db.js";
 import 'dotenv/config'
 import { getPaymentUser, getUserDB } from "../db/user.js";
 
-const price = 19.90
+const price = 14.99
 
 //criarCobranca()
 export async function criarCobranca(req, res) {
